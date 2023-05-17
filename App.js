@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import Navigation from "./navigation";
+import { AuthProvider } from "./components/Context/AuthContext";
+import { StyleSheet } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { useAuth } from "./components/Context/AuthContext";
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <AuthProvider>
+      <StatusBar style="light" />
+      <Navigation />
+    </AuthProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#E1E1E1",
   },
 });
